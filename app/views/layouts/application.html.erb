@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> <%= content_for?(:title) ? content_for(:title) : "Testexpe" %></title>
+  <%= stylesheet_link_tag :all %>
+ 
+  <%=  javascript_include_tag  "jquery.min.js" %>
+  <%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" %>
+  <%= javascript_include_tag "http://code.jquery.com/jquery-latest.js" %>
+  <%= javascript_include_tag "jquery_ujs.js" %>
+  <script type="text/javascript">
+  jQuery.noConflict();
+</script>
+  <%= csrf_meta_tag %>
+  <%= yield(:head) %>
+</head>
+<body>
+
+<div class="main_content">
+
+
+
+	<div class="header">
+	</div>
+
+	<div class="content">
+	
+	
+
+								<div class="right_content">
+									<%= yield(:left) %>
+								</div>
+
+		
+		<div class="left_content">
+
+		
+			<div class="intro">
+				 <h1><%= yield(:intro) %></h1>
+			</div>
+			<div class="graph">
+				<%= yield(:graph) %>
+	
+			</div>
+		
+			<%= yield %>
+		</div>
+
+
+	</div>
+
+<div style="clear:both"></div>	
+<div class="footer"></div>
+
+
+</div>
+</body>
+</html>

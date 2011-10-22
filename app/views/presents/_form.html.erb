@@ -1,0 +1,44 @@
+
+
+<%= form_for(@present) do |f| %>
+  <% if @present.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@present.errors.count, "error") %> prohibited this present from being saved:</h2>
+
+      <ul>
+      <% @present.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="field">
+   <%= hidden_field_tag :present_item_id, @present.item_id %>
+ </div>
+  <div class="field">
+   <%= hidden_field_tag :present_quantity_left2, @present.quantity_left %>
+ </div>
+  <div class="field">
+    How much have you eaten out of <%= h(@present.quantity_left) %> today?<br />
+    <%= f.text_field :quantity_left , :size => 10 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+    <div class="actions">
+    <%= submit_tag("Reset", { :name => 'reset', :id => 'reset_button', :type => "reset" }) %>
+  </div>
+
+<% end %>
+
+<%= link_to 'Back', items_path %>
+
+<script type="text/javascript" >
+    $("#present_quantity_left").blur(function () { 
+       var value = $("#present_quantity_left2").val();
+       var value2 = $(this).val();
+       $(this).val(value - value2);
+ });
+</script>
+

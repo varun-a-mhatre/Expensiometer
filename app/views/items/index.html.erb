@@ -1,0 +1,39 @@
+<%= title "Listing Items" %>
+
+
+
+<%= content_for :graph do %>
+	<%= render :partial => 'graph' %>
+<% end %>
+
+
+
+<table class="list_items">
+  <tr>
+    <th></th>
+    <th>Product</th>
+    <th>Quantity Left</th>
+    <th>Qunatity</th>
+    <th>Calories Eaten</th>
+    <th>Price</th>
+
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    </tr>
+ <div id="items">
+<%= render :partial=> @items, :locals => { :list => true} %>
+
+</div>
+ </table>
+
+<%= link_to 'blank', :action => 'blankk' %>
+
+
+
+<div id="presentss">Some thing here</div>
+
+<%= content_for :left do %>
+	<%= render :partial => 'form' %>
+<% end %>

@@ -1,0 +1,77 @@
+
+ 
+
+
+  <p>New Item</p>
+
+ <div class="new_item_form">
+ 
+ <div class="field">
+    Category<br />
+        <%= select_tag :icategory_id , options_from_collection_for_select(Category.find(:all, :order => 'name'), :id, :name), :prompt => "Select a Category", :onchange => "#{remote_function(:url  => {:action => :update_products}, :with => "'category_id='+value")}"  %>
+
+         
+  </div>
+
+<%= form_for(@item, :remote => true) do |f|  %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div id="product_field" class="field">
+      <%= f.label :product_id %><br />
+      <%= f.collection_select :product_id, Product.find(:all), :id, :name, :selected => :product_id, :prompt => "Select a Product" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :shop_id %><br />
+    <%= f.collection_select :shop_id , Shop.find(:all), :id, :name, :selected => :shop_id, :prompt => "Select a shop" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity, :size => '10' %>
+  </div>
+   
+  
+   <%= f.fields_for :presents do |pf| %>
+   <div class="field">
+        <%= pf.label :quantity_left %><br />
+	<%= pf.text_field :quantity_left , :size => '10' %>
+	<%= pf.check_box :_destroy %>
+        <%= pf.label :_destroy, "Remove" %>
+   </div>
+   <% end %>
+  
+
+
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price , :size => '10' %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+ 
+<% end %>
+
+</div>
+
+
+<script type="text/javascript" >
+    $("#item_quantity").keyup(function () {
+      var value = $(this).val();
+      $("#item_presents_attributes_0_quantity_left").val(value);
+    }).keyup();
+</script>

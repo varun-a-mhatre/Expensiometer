@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  category_id: 1
+  shop_id: 1
+  rate_per_unit: 1
+  calories_per_unit: 1
+  unit: MyString
+
+two:
+  name: MyString
+  category_id: 1
+  shop_id: 1
+  rate_per_unit: 1
+  calories_per_unit: 1
+  unit: MyString

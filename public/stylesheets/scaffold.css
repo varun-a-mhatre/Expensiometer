@@ -1,0 +1,206 @@
+body { background-color: #fff; color: #333; }
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+body {
+ font: .9em verdana, arial, helvetica, Sans-Serif; 
+ color: #333;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #0; background-color:#000; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+
+.black_overlay{
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.8;
+	opacity:.80;
+	filter: alpha(opacity=80);
+}
+.white_content {
+	display: none;
+	position: absolute;
+	
+	margin-top: 90px;
+	margin-left: 550px;
+    text-align: center;
+	padding: 16px;
+    text-align:center;
+	background-color: white;
+	z-index:1002;
+	overflow: auto;
+}
+
+
+.main_content { 
+	margin: 0 auto;
+	width: 900px;
+	height: 100%;
+}
+
+
+
+.header {
+
+height: 110px;
+width: 900px;
+background-color: black;
+
+}
+
+.footer {
+
+    background-color: black;
+    height: 60px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+
+.content {
+
+width: 100%;
+height: 100%;
+margin-top: 10px;
+
+
+}
+
+
+.left_content {
+
+float: left;
+
+width: 75%;
+position: relative;
+
+}
+
+.intro { 
+    background: none repeat scroll 0 0 #EEEEEE;
+
+    clear: both;
+    margin: -18px 0 7px;
+    width: 100%;
+}
+
+.intro h1 {
+
+padding-left: 25px;
+}
+
+
+
+.list_items {
+
+
+   border: 3px solid WhiteSmoke;
+    text-align: center;
+
+}
+
+.right_content {
+
+float: right;
+width: 24%;
+height: 100%	;
+position: relative;
+text-align: center;
+background-color: LightGray;
+
+}
+
+.right_content p {
+
+font-size: 26px;
+}
+
+.new_item_form {
+
+text-align: left;
+padding-left: 10px;
+font-style: italic;
+}
+
+
+
+.graph {
+
+text-align: center;
+}
+
+
+#calories_div {
+
+display: inline-block;
+
+}
+
+#expense_div {
+
+display: inline-block;
+
+}
+
+
+
+
+

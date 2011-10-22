@@ -1,0 +1,22 @@
+<%= title "Showing Present-" @present.item.product.name %>
+<p id="notice"><%= notice %></p>
+
+<p>
+
+  <b>Item:</b>
+   <%= image_tag @present.item.product.product_img.url(:thumb) %>
+    <%=	@present.item.product.name %>
+
+    <%= collection_select :nil, :id, @products, @products, :prompt => "Select an Item" %>
+
+
+</p>
+
+<p>
+  <b>Quantity left:</b>
+  <%= @present.quantity_left %>
+</p>
+
+
+<%= link_to 'Edit', edit_present_path(@present) %> |
+<%= link_to 'Back', presents_path %>

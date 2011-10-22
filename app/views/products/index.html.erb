@@ -1,0 +1,31 @@
+<%= title "Listing Products" %>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Calories per unit</th>
+    <th>Unit</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= image_tag product.product_img.url (:thumb) %></td>
+    <td><%= product.name %></td>
+    <td><%= image_tag product.category.category_img.url(:thumb) %></td>
+    <td><%= product.calories_per_unit %></td>
+    <td><%= product.unit %></td>
+    <td><%= link_to 'Show', product %></td>
+    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Product', new_product_path %>

@@ -1,0 +1,36 @@
+<%= title "Showing Product-" + @product.name %>
+<p id="notice"><%= notice %></p>
+
+
+<p>
+	<b> photo </b>
+	<%= image_tag @product.product_img.url(:thumb) %>
+</p>
+
+
+<p>
+  <b>Name:</b>
+  <%= @product.name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= image_tag @product.category.category_img.url(:thumb) %>
+  
+</p>
+
+
+
+<p>
+  <b>Calories per unit:</b>
+  <%= @product.calories_per_unit %>
+</p>
+
+<p>
+  <b>Unit:</b>
+  <%= @product.unit %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

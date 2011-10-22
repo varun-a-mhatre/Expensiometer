@@ -1,0 +1,12 @@
+/* Add the new comment to the bottom of the comments list */
+$('.list_items tr:last').after("<%= escape_javascript(render(@item)) %>", function(){ $("#item_<%= @item.id %>").effect("highlight", {}, 3000);  });
+
+/* Highlight the new comment */
+/* $("#item_<%= @item.id %>").effect("highlight", {}, 3000); */
+
+/* Reset the form */
+$(':input','form#new_item.new_item')
+ .not(':button, :submit, :reset, :hidden')
+ .val('')
+ .removeAttr('checked')
+ .removeAttr('selected');

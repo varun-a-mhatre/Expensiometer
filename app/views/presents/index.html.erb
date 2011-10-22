@@ -1,0 +1,25 @@
+<%= title "Listing Presents" %>
+
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Quantity left</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @presents.each do |present| %>
+  <tr>
+    <td><%= present.item_id %></td>
+    <td><%= present.quantity_left %></td>
+    <td><%= link_to 'Show', present %></td>
+    <td><%= link_to 'Edit', edit_present_path(present) %></td>
+    <td><%= link_to 'Destroy', present, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Present', new_present_path %>

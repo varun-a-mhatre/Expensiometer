@@ -1,0 +1,30 @@
+
+
+
+
+
+  <tr id="item_<%= item.id %>">
+   <td><%= image_tag item.product.product_img.url(:thumb) %>
+   <td><%= link_to item.product.name, edit_item_path(item) %></td>
+   
+   <td>
+    	<a href = "javascript:void(0)" onclick = "document.getElementById('<%= item.id.to_s %>').style.display='block';document.getElementById('fade').style.display='block'">
+	<%= link_to pluralize(item.presents.last.quantity_left,item.product.unit), :action => "edit", :controller => "presents", :id => item.presents.last.id, :remote => true %>
+
+
+        <div id="<%= item.id.to_s %>" class="white_content"> i dono what this will show <a href = "javascript:void(0)" onclick = "document.getElementById('<%= item.id.to_s %>').style.display='none';document.getElementById('fade').style.display='none'">Close</a></div>
+        <div id="fade" class="black_overlay"></div>
+    </td>
+   
+    <td><%= pluralize(item.quantity, item.product.unit) %></td>
+    <td><%= item.product.calories_per_unit*(item.quantity - item.presents.last.quantity_left) %></td>
+    <td>$<%= item.price %> </td>
+   <!-- 
+    <td><%= image_tag item.product.category.category_img.url(:thumb) %></td>
+    <td><%= image_tag item.shop.shop_img.url(:thumb) %></td>
+    -->
+    <td>
+    
+    <%= link_to 'X', item, :confirm => 'Are you sure?', :method => :delete, :remote => :true %></td>
+      </tr>
+

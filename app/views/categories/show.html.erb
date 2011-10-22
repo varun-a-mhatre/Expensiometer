@@ -1,0 +1,17 @@
+<%= title "Showing Category-" + @category.name %>
+<p id="notice"><%= notice %></p>
+
+<p>
+	<b> photo </b>
+	<%= image_tag @category.category_img.url(:thumb) %>
+</p>
+<p>
+  <b>Name:</b>
+  <%= @category.name %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

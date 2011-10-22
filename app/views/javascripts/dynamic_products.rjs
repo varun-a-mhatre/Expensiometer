@@ -1,0 +1,25 @@
+var products = new Array();
+<% for products in @products -%>
+  products.push(new Array(<%= product.category_id %>, '<%=h product.name %>', <%= product.id %>));
+<% end -%>
+
+function categorySelected() {
+  category_id = $('icategory_id').getValue();
+  options = $('item_product_id').options;
+  options.length = 1;
+  products.each(function(product) {
+    if (product[0] == category_id) {
+      options[options.length] = new Option(product[1], product[2]);
+    }
+  });
+  if (options.length == 1) {
+    $('product_field').hide();
+  } else {
+    $('product_field').show();
+  }
+}
+
+document.observe('dom:loaded', function() {
+  categorySelected();
+  $('icountry_id').observe('change', categorySelected);
+});

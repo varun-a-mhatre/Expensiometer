@@ -1,0 +1,15 @@
+<%= title "Showing Shop-" + @shop.name %>
+<p id="notice"><%= notice %></p>
+
+<p>
+	<b> photo </b>
+	<%= image_tag @shop.shop_img.url(:thumb) %>
+</p>
+<p>
+  <b>Name:</b>
+  <%= @shop.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_shop_path(@shop) %> |
+<%= link_to 'Back', shops_path %>

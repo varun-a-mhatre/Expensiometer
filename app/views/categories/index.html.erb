@@ -1,0 +1,30 @@
+<%= title "Listing Categories" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td>
+	<a href = "javascript:void(0)" onclick = "document.getElementById('<%= category.id.to_s %>').style.display='block';document.getElementById('fade').style.display='block'">
+	<%= image_tag category.category_img.url (:thumb) %> </a>
+        <div id="<%= category.id.to_s %>" class="white_content"> <%= image_tag category.category_img.url(:small) %> <a href = "javascript:void(0)" onclick = "document.getElementById('<%= category.id.to_s %>').style.display='none';document.getElementById('fade').style.display='none'">Close</a></div>
+        <div id="fade" class="black_overlay"></div>
+    </td>
+    <td><%= category.name %></td>
+    <td><%= link_to 'Show', category %></td>
+    <td><%= link_to 'Edit', edit_category_path(category) %></td>
+    <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Category', new_category_path %>
+  
